@@ -30,5 +30,5 @@ export const userPropType = PropTypes.shape({
   twitter_username: PropTypes.string,
   type: PropTypes.string,
   updated_at: PropTypes.string,
-  url: PropTypes.number,
+  url: PropTypes.string,
 });
