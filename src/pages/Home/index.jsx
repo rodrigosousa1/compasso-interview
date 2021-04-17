@@ -1,16 +1,13 @@
 import React from 'react';
 
-import Button from '../../components/Button';
-import Input from '../../components/Input';
+import SearchForm from './SearchForm';
+import SearchUserResult from './SearchUserResult';
 
 export default function Home() {
   return (
     <div>
-      Home Page
-      <div>
-        <Input />
-        <Button>Buscar</Button>
-      </div>
+      <SearchForm />
+      <SearchUserResult />
     </div>
   );
 }
