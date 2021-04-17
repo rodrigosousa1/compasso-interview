@@ -13,6 +13,10 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'no-console': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/prefer-default-export': 'off',
+    'react/button-has-type': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };
