@@ -12,7 +12,7 @@ $component-name: 'c-card';
     &__avatar {
         height: rem(120);
         width: rem(120);
-        border-radius: rem(60);
+        border-radius: 50%;
         margin-right: $global-module-size;
     }
 

@@ -1,0 +1,57 @@
+$component-name: 'c-profile';
+
+.#{$component-name} {
+    &__picture {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: rem(15);
+
+        @include breakpoint(medium-only) {
+            display: flex;
+            width: rem(220);
+            height: rem(220);
+        }
+    }
+
+    &__name {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    &__username {
+        color: #6c757d;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    &__bio {
+        font-size: 16px;
+    }
+
+    &__personal-info {
+        list-style-type: none;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    &__item {
+        margin-bottom: rem(5);
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(medium-only) {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    @include breakpoint(small-only) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

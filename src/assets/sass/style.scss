@@ -42,6 +42,9 @@
 @import "layout/l-main";
 @import "layout/l-footer";
 @import "layout/l-input-group";
+@import "layout/l-profile";
+@import "layout/l-repos";
+@import "layout/l-profile-container";
 
 // ==========================================================================
 // Component
@@ -51,6 +54,7 @@
 @import "component/c-search";
 @import "component/c-card";
 @import "component/c-badges";
+@import "component/c-profile";
 
 // ==========================================================================
 // State

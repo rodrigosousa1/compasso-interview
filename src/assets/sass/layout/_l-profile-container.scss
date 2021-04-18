@@ -1,0 +1,12 @@
+$layout-name: "l-profile-container";
+
+.#{$layout-name} {
+  grid-template-areas: "profile repos";
+  grid-template-columns: .8fr 2fr;
+  grid-template-rows: min-content auto;
+  grid-gap: $global-module-size;
+
+  @include breakpoint(medium-up) {
+    display: grid;
+  }
+}

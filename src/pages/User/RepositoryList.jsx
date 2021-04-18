@@ -10,8 +10,8 @@ function RepositoryList({ data, loading }) {
   if (loading) return <Loading />;
 
   return data.map((repo) => (
-    <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <RepositoryCard key={repo.full_name} repo={repo} />
+    <ErrorBoundary key={repo.full_name} FallbackComponent={ErrorFallback}>
+      <RepositoryCard repo={repo} />
     </ErrorBoundary>
   ));
 }

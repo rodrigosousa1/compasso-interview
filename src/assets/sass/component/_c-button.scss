@@ -20,4 +20,8 @@ $component-name: 'c-button';
     background-color: lighten(#0d1117, 8%);
   }
 
+  &--block {
+    display: block;
+    width: 100%;
+  }
 }

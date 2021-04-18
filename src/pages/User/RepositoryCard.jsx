@@ -4,7 +4,7 @@ import { repoPropTypes } from '../../utils/propTypes';
 
 function RepositoryCard({ repo }) {
   return (
-    <article>
+    <section>
       <h1>{repo.full_name}</h1>
       <p>{repo.description}</p>
       <p>
@@ -19,7 +19,7 @@ function RepositoryCard({ repo }) {
         Watch:
         {repo.watchers_count}
       </p>
-    </article>
+    </section>
   );
 }
 

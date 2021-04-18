@@ -1,0 +1,6 @@
+$layout-name: "l-profile";
+
+.#{$layout-name} {
+    grid-area: profile;
+    padding: $global-module-size;
+}

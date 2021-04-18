@@ -35,7 +35,7 @@ function UserCard({ user }) {
       </section>
       <div className="c-card__actions">
         <Button className="c-button" type="button" onClick={handleDetailsClick}>
-          + Details
+          More details
         </Button>
       </div>
     </div>
