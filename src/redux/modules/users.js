@@ -9,6 +9,8 @@ const FETCH_USER_FAIL = 'compasso-interview/users/FETCH_USER_FAIL';
 const FETCH_USER_REPOS_SUCCESS = 'compasso-interview/users/FETCH_USER_REPOS_SUCCESS';
 const FETCH_USER_REPOS_FAIL = 'compasso-interview/users/FETCH_USER_REPOS_FAIL';
 
+const CLEAR_USER_STATE = 'compasso-interview/users/CLEAR_USER_STATE';
+
 const initialState = {
   user: null,
   repos: [],
@@ -33,6 +35,8 @@ export default function reducer(state = initialState, action = {}) {
       return { ...state, isLoading: action.payload };
     case SET_REPO_LOADING_STATE:
       return { ...state, isRepoLoading: action.payload };
+    case CLEAR_USER_STATE:
+      return { ...initialState };
     default:
       return state;
   }
@@ -65,3 +69,7 @@ export const fetchUserRepositories = (username, repo) => async (dispatch) => {
     dispatch({ type: SET_REPO_LOADING_STATE, payload: false });
   }
 };
+
+export const clearUserState = () => ({
+  type: CLEAR_USER_STATE,
+});
