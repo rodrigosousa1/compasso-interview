@@ -1,9 +1,10 @@
-import { Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Button, Input } from '../../components';
 import { fetchUser } from '../../redux/modules/users';
+import { SearchSchema } from '../../utils/validations';
 
 export default function SearchForm() {
   const dispatch = useDispatch();
@@ -13,19 +14,23 @@ export default function SearchForm() {
   }
 
   return (
-    <Formik initialValues={{ username: '' }} onSubmit={onSubmit}>
+    <Formik initialValues={{ username: '' }} validationSchema={SearchSchema} onSubmit={onSubmit}>
       {({
         handleSubmit, handleChange, handleBlur, values,
       }) => (
         <form onSubmit={handleSubmit}>
-          <Input
-            type="search"
-            name="username"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.username}
-          />
-          <Button type="submit">Buscar</Button>
+          <div>
+            <Input
+              type="search"
+              name="username"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.username}
+            />
+
+            <Button type="submit">Buscar</Button>
+          </div>
+          <ErrorMessage name="username" />
         </form>
       )}
     </Formik>
