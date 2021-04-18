@@ -7,7 +7,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Route exact path="/" component={Home} />
-      <Route path="/:user" component={User} />
+      <Route path="/:username" component={User} />
     </BrowserRouter>
   );
 }

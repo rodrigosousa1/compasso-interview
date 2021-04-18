@@ -1,41 +1,67 @@
 import github from '../../api/github';
 
-const FETCH_USER = 'compasso-interview/users/FETCH_USER';
+const SET_USER_LOADING_STATE = 'compasso-interview/users/SET_USER_LOADING_STATE';
+const SET_REPO_LOADING_STATE = 'compasso-interview/users/SET_REPO_LOADING_STATE';
+
 const FETCH_USER_SUCCESS = 'compasso-interview/users/FETCH_USER_SUCCESS';
 const FETCH_USER_FAIL = 'compasso-interview/users/FETCH_USER_FAIL';
-const SET_LOADING_STATE = 'compasso-interview/users/SET_LOADING_STATE';
+
+const FETCH_USER_REPOS_SUCCESS = 'compasso-interview/users/FETCH_USER_REPOS_SUCCESS';
+const FETCH_USER_REPOS_FAIL = 'compasso-interview/users/FETCH_USER_REPOS_FAIL';
 
 const initialState = {
   user: null,
+  repos: [],
   error: null,
-  isLoading: false,
 };
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case FETCH_USER:
-      return { ...state, isLoading: true };
     case FETCH_USER_SUCCESS:
       return {
-        ...state, error: null, user: action.payload,
+        ...state, user: action.payload, error: null,
+      };
+    case FETCH_USER_REPOS_SUCCESS:
+      return {
+        ...state, repos: action.payload, error: null,
       };
     case FETCH_USER_FAIL:
       return { ...state, error: action.payload, user: {} };
-    case SET_LOADING_STATE:
+    case FETCH_USER_REPOS_FAIL:
+      return { ...state, error: action.payload, repos: [] };
+    case SET_USER_LOADING_STATE:
       return { ...state, isLoading: action.payload };
+    case SET_REPO_LOADING_STATE:
+      return { ...state, isRepoLoading: action.payload };
     default:
       return state;
   }
 }
 
-export const fetchUser = (userName) => async (dispatch) => {
+export const fetchUser = (username) => async (dispatch) => {
   try {
-    dispatch({ type: FETCH_USER });
-    const { data } = await github.get(`/users/${userName}`);
+    dispatch({ type: SET_USER_LOADING_STATE, payload: true });
+    const { data } = await github.get(`/users/${username}`);
     return dispatch({ type: FETCH_USER_SUCCESS, payload: data });
   } catch (err) {
     return dispatch({ type: FETCH_USER_FAIL, payload: err.message });
   } finally {
-    dispatch({ type: SET_LOADING_STATE, payload: false });
+    dispatch({ type: SET_USER_LOADING_STATE, payload: false });
+  }
+};
+
+export const fetchUserRepositories = (username, repo) => async (dispatch) => {
+  try {
+    const validRepos = ['repos', 'starred'];
+    if (!validRepos.includes(repo)) throw Error('Invalid repository');
+
+    dispatch({ type: SET_REPO_LOADING_STATE, payload: true });
+
+    const { data } = await github.get(`/users/${username}/${repo}`);
+    return dispatch({ type: FETCH_USER_REPOS_SUCCESS, payload: data });
+  } catch (err) {
+    return dispatch({ type: FETCH_USER_REPOS_FAIL, payload: err.message });
+  } finally {
+    dispatch({ type: SET_REPO_LOADING_STATE, payload: false });
   }
 };

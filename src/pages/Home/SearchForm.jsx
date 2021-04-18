@@ -8,22 +8,22 @@ import { fetchUser } from '../../redux/modules/users';
 export default function SearchForm() {
   const dispatch = useDispatch();
 
-  function onSubmit({ userName }) {
-    dispatch(fetchUser(userName));
+  function onSubmit({ username }) {
+    dispatch(fetchUser(username));
   }
 
   return (
-    <Formik initialValues={{ userName: '' }} onSubmit={onSubmit}>
+    <Formik initialValues={{ username: '' }} onSubmit={onSubmit}>
       {({
         handleSubmit, handleChange, handleBlur, values,
       }) => (
         <form onSubmit={handleSubmit}>
           <Input
             type="search"
-            name="userName"
+            name="username"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.userName}
+            value={values.username}
           />
           <Button type="submit">Buscar</Button>
         </form>

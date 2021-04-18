@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Button } from '../../components/Button';
-import { userPropType } from '../../utils/propTypes';
+import { userPropTypes } from '../../utils/propTypes';
 
 function UserCard({ user }) {
   const history = useHistory();
@@ -15,7 +15,7 @@ function UserCard({ user }) {
     <div>
       <h1>{user.name}</h1>
       <p>
-        {`@${user.login}`}
+        {`${user.login}`}
       </p>
       <p>{user.bio}</p>
       <p>
@@ -34,7 +34,7 @@ function UserCard({ user }) {
 }
 
 UserCard.propTypes = {
-  user: userPropType.isRequired,
+  user: userPropTypes.isRequired,
 };
 
 export default UserCard;
