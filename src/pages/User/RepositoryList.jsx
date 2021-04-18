@@ -11,7 +11,7 @@ function RepositoryList({ data, loading }) {
 }
 
 RepositoryList.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape(repoPropTypes)).isRequired,
+  data: PropTypes.arrayOf(repoPropTypes).isRequired,
   loading: PropTypes.bool,
 };
 
