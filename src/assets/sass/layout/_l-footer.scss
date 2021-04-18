@@ -1,0 +1,20 @@
+$layout-name: 'l-footer';
+
+.#{$layout-name} {
+  grid-area: footer;
+
+  grid-template-columns: $global-max-width;
+  justify-content: center;
+  align-items: center;
+
+  &__info {
+    font-size: $global-font-size / 1.1;
+    line-height: $global-line-height;
+    font-weight: 400;
+  }
+
+  @include breakpoint(large-up) {
+    display: grid;
+    height: rem(90);
+  }
+}

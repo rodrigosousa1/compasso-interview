@@ -1,0 +1,21 @@
+$component-name: 'c-button';
+
+.#{$component-name} {
+  font-family: 'Poppins';
+  letter-spacing: 0.3px;
+  font-weight: bold;
+  background-color: #231f20;
+  font-size: .875rem;
+  padding: .5rem 2rem;
+  color:white;
+  border-style: none;
+  border-width: 0;
+  
+  &:focus {
+    border: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

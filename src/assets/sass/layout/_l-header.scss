@@ -1,0 +1,12 @@
+$layout-name: 'l-header';
+
+.#{$layout-name} {
+  grid-area: header;
+  height: rem(55);
+  grid-template-columns: $global-max-width;
+  justify-content: center;
+
+  @include breakpoint(large-up) {
+    display: grid;
+  }
+}

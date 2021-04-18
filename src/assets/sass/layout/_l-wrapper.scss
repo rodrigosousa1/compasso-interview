@@ -1,0 +1,15 @@
+$layout-name: 'l-wrapper';
+
+.#{$layout-name} {
+  grid-template-areas:
+    'header header header'
+    '.      main   .     '
+    'footer footer footer';
+  grid-template-columns: 1fr $global-max-width 1fr;
+  grid-template-rows: min-content auto min-content;
+  grid-gap: $global-module-size;
+
+  @include breakpoint(large-up) {
+    display: grid;
+  }
+}
