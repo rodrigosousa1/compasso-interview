@@ -1,0 +1,42 @@
+$component-name: 'c-card';
+
+.#{$component-name} {
+    display: flex;
+    border: 1px solid #f2f2f2;
+    border-radius: $global-radius;
+    flex-direction: column;
+    padding: $global-module-size;
+    margin-top: $global-module-size;
+    font-size: 16px;
+
+    &__avatar {
+        height: rem(120);
+        width: rem(120);
+        border-radius: rem(60);
+        margin-right: $global-module-size;
+    }
+
+    &__title {
+        font-size: 28px;
+        margin: 0;
+        padding-bottom: 0.385rem;
+    }
+
+    &__info {
+        flex-grow: 2;
+        flex-wrap: nowrap;
+    }
+
+    &__actions {
+        flex-direction: column;
+    }
+
+    &__subtitle {
+        color: #6c757d;
+        margin: 0;
+    }
+
+    @include breakpoint(small-up) {
+        flex-direction: inherit;
+    }
+}

@@ -1,0 +1,38 @@
+$component-name: 'c-badges';
+
+.#{$component-name} {
+    display: flex;
+    font-size: 14px;
+    padding-bottom: $global-module-size;
+
+    &__item {
+        display: inherit;
+        margin-right: $global-module-size / 3;
+        background-color: #f2f2f2;
+        padding: rem(5);
+        border-radius: rem(3);
+
+        &--dark {
+            background-color: #0d1117;
+        }
+    }
+
+    &__text {
+        color: #8b949e;
+        margin-right: rem(3);
+        &--bold {
+            font-weight: bold;
+        }
+        &--white{
+            color: white;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+}

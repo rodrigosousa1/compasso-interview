@@ -4,7 +4,7 @@ $component-name: 'c-button';
   font-family: 'Poppins';
   letter-spacing: 0.3px;
   font-weight: bold;
-  background-color: #231f20;
+  background-color: #0d1117;
   font-size: .875rem;
   padding: .5rem 2rem;
   color:white;
@@ -17,5 +17,7 @@ $component-name: 'c-button';
 
   &:hover {
     cursor: pointer;
+    background-color: lighten(#0d1117, 8%);
   }
+
 }
