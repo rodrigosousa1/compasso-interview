@@ -27,7 +27,7 @@ export default function SearchForm() {
               onBlur={handleBlur}
               value={values.username}
             />
-            <Button className="c-button" type="submit">Buscar</Button>
+            <Button className="c-button" type="submit">Search</Button>
           </div>
 
           <ErrorMessage name="username" />
