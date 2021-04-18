@@ -1,0 +1,44 @@
+$component-name: 'c-repos';
+
+.#{$component-name} {
+    &__title {
+        font-size: 28px;
+    }
+
+    &__navlinks {
+        display: flex;
+        justify-content: flex-start;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__item {
+        display: inline;
+        font-size: 14px;
+    }
+
+    &__link {
+        text-decoration: none;
+        padding: rem(8) rem(16);
+        line-height: rem(30);
+        text-align: center;
+        white-space: nowrap;
+        background-color: initial;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        color: var(--color-charcoal);
+
+        &--active {
+            font-weight: 500;
+            border-bottom: 2px solid #1de22c;
+            background-color: #f2f2f2;
+        }
+
+        &:hover {
+            border-bottom: 2px solid #1de22c;
+            background-color: #f2f2f2;
+        }
+
+
+    }
+}

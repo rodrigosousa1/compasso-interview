@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
 import { Loading, Button } from '../../components';
 import { useQuery } from '../../hooks';
@@ -53,14 +53,27 @@ export default function User() {
           </section>
         </div>
       </div>
-      <section className="l-repos">
-        <h1>Repositories</h1>
-        <ul>
-          <li><Link to={`${username}?tab=repos`}>Repositories</Link></li>
-          <li><Link to={`${username}?tab=starred`}>Starred Repositories</Link></li>
-        </ul>
-        <RepositoryList data={repos} loading={isRepoLoading} />
-      </section>
+      <div className="l-repos">
+        <section className="c-repos">
+          <h1 className="c-repos__title">Repositories</h1>
+          <ul className="c-repos__navlinks">
+            <li className="c-repos__item">
+              <NavLink
+                className={`c-repos__link ${tab === 'repos' ? 'c-repos__link--active' : ''}`}
+                to={`${username}?tab=repos`}
+              >
+                Repositories
+              </NavLink>
+            </li>
+            <li className="c-repos__item">
+              <NavLink className={`c-repos__link ${tab === 'starred' ? 'c-repos__link--active' : ''}`} to={`${username}?tab=starred`}>
+                Starred Repositories
+              </NavLink>
+            </li>
+          </ul>
+          <RepositoryList data={repos} loading={isRepoLoading} />
+        </section>
+      </div>
     </div>
   );
 }

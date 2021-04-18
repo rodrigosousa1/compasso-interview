@@ -2,12 +2,15 @@ import React from 'react';
 
 import { numberFormatter } from '../../utils';
 import { repoPropTypes } from '../../utils/propTypes';
+import { useQuery } from '../../hooks';
 
 function RepositoryCard({ repo }) {
+  const { tab } = useQuery();
+
   return (
     <div className="c-card">
       <section className="c-card__info">
-        <h1 className="c-card__title">{repo.full_name}</h1>
+        <h1 className="c-card__title">{tab === 'starred' ? repo.full_name : repo.name }</h1>
         <div className="c-card__content">
           <p>{repo.description}</p>
           <div className="c-badges">
