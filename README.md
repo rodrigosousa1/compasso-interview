@@ -16,6 +16,8 @@ Construir uma aplicação consumindo a api do [GitHub](https://developer.github.
 - Endpoint starred: https://api.github.com/users/NOME_USUARIO/starred{/owner}{/repo}
 
 ---
+##  Live demo
+Para visualizar uma demostração clique [aqui](https://pensive-babbage-5131e5.netlify.app).
 
 # 🛠 Pré-requisitos
 - Utilizar node [v15.13](https://nodejs.org/en/).
@@ -29,16 +31,16 @@ Construir uma aplicação consumindo a api do [GitHub](https://developer.github.
 
 ```bash
 
-# Etapa 1: Clone o repositório utilizando o Git através do comando abaixo ou baixe o arquivo zip.
+# Etapa 1: Abra o terminal ou cmd e clone o repositório utilizando o Git através do comando abaixo ou baixe o arquivo zip.
 $ git clone https://github.com/rodrigosousa1/compasso-interview.git
 
-# Etapa 2: Acesse a pasta do projeto utilizando seu Terminal ou seu CMD.
+# Etapa 2: Utilize o comando abaixo para acessar a pasta do projeto.
 $ cd compasso-interview
 
 # Etapa 3: Instale as dependências utilizando o Yarn (Previamente escolhido por mim pra gerir as dependências).
 $ yarn
 
-# Etapa 4: Inicialize o projeto utilizando o comando abaixo
+# Etapa 4: Inicialize o projeto utilizando o comando abaixo.
 $ yarn start
 
 # A Aplicação será iniciada em http://localhost:3000.
@@ -66,6 +68,8 @@ $ yarn start
 [Sass](https://sass-lang.com/)
 
 [Formik](https://formik.org/docs/overview)
+
+[React Lottie](https://github.com/chenqingspring/react-lottie)
 
 [Yup](https://github.com/jquense/yup)
 
