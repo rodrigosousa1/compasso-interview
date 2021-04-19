@@ -1,0 +1,27 @@
+$component-name: 'c-notfound';
+
+.#{$component-name} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__code {
+        font-size: 80px;
+        font-weight: bolder;
+        margin-bottom: rem(15);
+    }
+
+    &__title {
+        font-size: 38px;
+        font-weight: bolder;
+
+        @include breakpoint(small-only) {
+            font-size: 28px;
+        }
+    }
+
+    &__message {
+        font-size: $global-font-size;
+        line-height: $global-line-height;
+    }
+}
