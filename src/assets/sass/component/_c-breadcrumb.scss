@@ -8,5 +8,11 @@ $component-name: 'c-breadcrumb';
     &__logo {
         width: auto;
         height: 28px;
+        
+        &:hover{
+            cursor: pointer;
+        }
     }
+
+    
 }

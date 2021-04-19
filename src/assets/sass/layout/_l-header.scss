@@ -7,9 +7,15 @@ $layout-name: 'l-header';
   justify-content: center;
   border-bottom: 1px solid #f2f2f2;
   padding-top: rem(8);
+  padding-left: rem(8);
 
   @include breakpoint(large-up) {
     display: grid;
     padding-top: 0;
+  }
+
+  @include breakpoint(small-only){
+    display: flex;
+    align-items: center;
   }
 }

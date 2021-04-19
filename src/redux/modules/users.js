@@ -54,7 +54,7 @@ export const fetchUser = (username) => async (dispatch) => {
   }
 };
 
-export const fetchUserRepositories = (username, repo) => async (dispatch) => {
+export const fetchUserRepositories = (username, repo = 'repos') => async (dispatch) => {
   try {
     const validRepos = ['repos', 'starred'];
     if (!validRepos.includes(repo)) throw Error('Invalid repository');

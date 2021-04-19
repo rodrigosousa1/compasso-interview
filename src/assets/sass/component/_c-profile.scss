@@ -1,6 +1,8 @@
 $component-name: 'c-profile';
 
 .#{$component-name} {
+    padding: $global-module-size / 2;
+
     &__picture {
         width: 100%;
         height: auto;
@@ -11,6 +13,8 @@ $component-name: 'c-profile';
             display: flex;
             width: rem(220);
             height: rem(220);
+            padding: rem(5);
+            margin-right: $global-module-size / 2;
         }
     }
 
@@ -45,7 +49,7 @@ $component-name: 'c-profile';
 
     @include breakpoint(medium-only) {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
     }
 

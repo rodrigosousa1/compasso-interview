@@ -4,7 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 
 import { Loading, Button } from '../../components';
 import { useQuery } from '../../hooks';
-import { fetchUser, fetchUserRepositories } from '../../redux/modules/users';
+import { fetchUser, fetchUserRepositories, clearUserState } from '../../redux/modules/users';
 import { isEmpty } from '../../utils';
 import PageNotFound from '../PageNotFound';
 import RepositoryList from './RepositoryList';
@@ -18,14 +18,16 @@ export default function User() {
   const { tab } = useQuery();
 
   useEffect(() => {
-    if (user) return;
-    dispatch(fetchUser(username));
+    if (!user) dispatch(fetchUser(username));
   }, []);
 
   useEffect(() => {
-    if (!tab) return;
     dispatch(fetchUserRepositories(username, tab));
   }, [tab]);
+
+  useEffect(() => function cleanup() {
+    dispatch(clearUserState());
+  }, []);
 
   function handleButtonClick() {
     window.open(user.html_url, '_blank').focus();
@@ -59,7 +61,7 @@ export default function User() {
           <ul className="c-repos__navlinks">
             <li className="c-repos__item">
               <NavLink
-                className={`c-repos__link ${tab === 'repos' ? 'c-repos__link--active' : ''}`}
+                className={`c-repos__link ${!tab || tab === 'repos' ? 'c-repos__link--active' : ''}`}
                 to={`${username}?tab=repos`}
               >
                 Repositories
