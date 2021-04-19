@@ -21,6 +21,7 @@ export default function SearchForm() {
         <form onSubmit={handleSubmit} autoComplete="off">
           <div className="l-input-group">
             <SearchInput
+              autoFocus
               type="search"
               name="username"
               onChange={handleChange}
