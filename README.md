@@ -19,6 +19,8 @@ Construir uma aplicação consumindo a api do [GitHub](https://developer.github.
 ##  Live demo
 Para visualizar uma demostração clique [aqui](https://pensive-babbage-5131e5.netlify.app).
 
+---
+
 # 🛠 Pré-requisitos
 - Utilizar node [v15.13](https://nodejs.org/en/).
 
