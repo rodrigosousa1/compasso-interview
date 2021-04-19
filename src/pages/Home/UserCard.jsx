@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Button } from '../../components/Button';
+import { numberFormatter } from '../../utils';
 import { userPropTypes } from '../../utils/propTypes';
 
 function UserCard({ user }) {
@@ -21,12 +22,12 @@ function UserCard({ user }) {
           <p>{user.bio}</p>
           <div className="c-badges">
             <div className="c-badges__item c-badges__item--dark">
-              <span className="c-badges__text c-badges__text--bold c-badges__text--white">{user.followers}</span>
+              <span className="c-badges__text c-badges__text--bold c-badges__text--white">{numberFormatter.format(user.followers)}</span>
               <span className="c-badges__text">followers</span>
             </div>
             <div className="c-badges__item c-badges__item--dark">
               <span className="c-badges__text c-badges__text--bold c-badges__text--white">
-                {user.following}
+                {numberFormatter.format(user.following)}
               </span>
               <span className="c-badges__text">following</span>
             </div>
