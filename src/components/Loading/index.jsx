@@ -15,8 +15,8 @@ function Loading() {
   return (
     <Lottie
       options={defaultOptions}
-      height={150}
-      width={150}
+      height={300}
+      width={300}
     />
   );
 }
