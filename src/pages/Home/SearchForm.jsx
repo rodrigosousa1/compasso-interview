@@ -29,8 +29,7 @@ export default function SearchForm() {
             />
             <Button className="c-button" type="submit">Search</Button>
           </div>
-
-          <ErrorMessage name="username" />
+          <small className="c-error"><ErrorMessage name="username" /></small>
         </form>
 
       )}

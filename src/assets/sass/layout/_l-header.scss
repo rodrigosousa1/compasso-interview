@@ -5,8 +5,11 @@ $layout-name: 'l-header';
   height: rem(55);
   grid-template-columns: $global-max-width;
   justify-content: center;
+  border-bottom: 1px solid #f2f2f2;
+  padding-top: rem(8);
 
   @include breakpoint(large-up) {
     display: grid;
+    padding-top: 0;
   }
 }

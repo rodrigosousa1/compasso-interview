@@ -1,0 +1,12 @@
+$component-name: 'c-breadcrumb';
+
+.#{$component-name} {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__logo {
+        width: auto;
+        height: 28px;
+    }
+}

@@ -2,6 +2,7 @@ $layout-name: 'l-input-group';
 
 .#{$layout-name} {
     display: flex;
+    margin-bottom: rem(5);
 
     @include breakpoint(small-only) {
         flex-direction: column;
