@@ -21,6 +21,7 @@ $component-name: 'c-search';
     }
 
     &__input {
+        font-family: "Fira Mono", "Andale Mono", "Consolas", monospace;
         position: relative;
         background: none;
         font-size: 16px;
