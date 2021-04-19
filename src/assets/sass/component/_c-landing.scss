@@ -1,0 +1,29 @@
+$component-name: 'c-landing';
+
+.#{$component-name} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: rem(5);
+    font-size: 18px;
+    margin-bottom: $global-module-size;
+
+    &__title {
+        font-size: 48px;
+        margin: 0;
+        @include breakpoint(medium-only) {
+            font-size: 38px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 22px;
+        letter-spacing: 0.028rem;
+        font-weight: 300;
+
+        @include breakpoint(medium-only) {
+            font-size: 16px;
+        }
+    }
+}
