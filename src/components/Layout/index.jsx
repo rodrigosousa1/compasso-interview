@@ -12,6 +12,7 @@ function Layout({ children }) {
           <Link to="/">
             <img className="c-breadcrumb__logo" src={Logo} alt="GitHub Logo" />
           </Link>
+          <small className="c-breadcrumb__info">Challenge</small>
         </div>
       </header>
       <main className="l-main">{children}</main>

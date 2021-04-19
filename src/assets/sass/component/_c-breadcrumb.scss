@@ -14,5 +14,12 @@ $component-name: 'c-breadcrumb';
         }
     }
 
+    &__info {
+        padding-top: rem(10);
+        padding-left: rem(10);
+        color: rgba(14,19,24,.7);
+        font-weight: 300;
+        letter-spacing: 0.05rem;
+    }
     
 }

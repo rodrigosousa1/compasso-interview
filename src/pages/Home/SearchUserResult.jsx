@@ -17,7 +17,7 @@ function SearchUserResult() {
 
   if (!user) return null;
   if (isLoading) return <Loading />;
-  if (isEmpty(user)) return <NotFound />;
+  if (isEmpty(user)) return <NotFound title="We couldn't find anything" message="Try another username." />;
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} onReset={onReset}>
