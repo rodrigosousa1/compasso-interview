@@ -26,6 +26,7 @@ function SearchInput({
           className="c-search__input"
           name={name}
           type="search"
+          placeholder="Search users"
           onChange={onChange}
           onBlur={onBlur}
           value={value}
